@@ -25,7 +25,6 @@ body {
   align-items: center;
   background-color: var(--color-light100);
   border-radius: 10px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   height: 571px;
@@ -46,16 +45,19 @@ body {
   & a {
     text-decoration: none;
     color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
   }
-
-  &__photo {
-    border-radius: 10px;
+  &__photo-container {
+    overflow: hidden;
+    margin: 1rem 1rem 2rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 1em;
+    border-radius: 10px;
+  }
+  &__photo {
     object-fit: contain;
-    overflow: hidden;
     transition: transform 0.3s ease-in-out;
   }
 
@@ -64,13 +66,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 1em;
+    margin: 0 1rem;
   }
 
   &__profile {
     align-items: center;
     display: flex;
-    gap: 0.75em;
+    gap: 0.75rem;
   }
 
   &__profile-photo {
@@ -81,18 +83,18 @@ body {
 
   &__profile-date {
     color: var(--color-lighten25);
-    font-size: 0.875em;
+    font-size: 0.875rem;
   }
 
   &__article {
     display: flex;
     flex-direction: column;
-    gap: 2em;
-    margin: 1em;
+    gap: 0.875rem;
+    margin: 2rem 1rem;
   }
 
   &__title {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 500;
   }
 
@@ -107,6 +109,23 @@ body {
 
   &__expand-content {
     display: flex;
-    gap: 0.75em;
+    margin-top: 1.125rem;
+  }
+}
+
+// Media quering
+//write media queries
+// Path: src\global-styles\home-page.scss
+@media (max-width: 768px) {
+  a {
+    height: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 769px) {
+  a {
+    height: 100%;
+    max-width: 100%;
   }
 }
