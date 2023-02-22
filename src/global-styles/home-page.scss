@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  // line-height: 100%;
 }
 
 :root {
@@ -57,6 +58,7 @@ body {
     border-radius: 10px;
   }
   &__photo {
+    display: flex;
     object-fit: contain;
     transition: transform 0.3s ease-in-out;
   }
@@ -70,20 +72,31 @@ body {
   }
 
   &__profile {
+    display: flex;
     align-items: center;
     display: flex;
     gap: 0.75rem;
   }
 
+  &__profile-name {
+    display: flex;
+    font-size: 0.875rem;
+    font-weight: 500;
+    // line-height: 100%;
+  }
+
   &__profile-photo {
+    display: flex;
     border-radius: 50%;
     height: 40px;
     width: 40px;
   }
 
   &__profile-date {
+    display: flex;
     color: var(--color-lighten25);
     font-size: 0.875rem;
+    letter-spacing: 0;
   }
 
   &__article {
@@ -94,38 +107,93 @@ body {
   }
 
   &__title {
+    display: flex;
     font-size: 1.5rem;
     font-weight: 500;
   }
 
   &__content {
+    display: flex;
     color: #7c7c7c;
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    line-height: 130%;
   }
 
   &__expand-content {
     display: flex;
     margin-top: 1.125rem;
+    gap: 0.875rem;
+    font-weight: 500;
   }
 }
 
 // Media quering
 //write media queries
-// Path: src\global-styles\home-page.scss
-@media (max-width: 768px) {
+@media (width <= 608px) {
   a {
-    height: 50%;
-    max-width: 50%;
+    width: 344px;
+    height: 519px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-}
 
-@media (min-width: 769px) {
-  a {
-    height: 100%;
-    max-width: 100%;
+  .blog-card {
+    width: 344px;
+    height: 519px;
+
+    &__photo-container {
+      display: flex;
+      width: 311px;
+      height: auto;
+      margin: 1rem;
+    }
+
+    &__heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 1rem;
+      margin: 0;
+    }
+
+    &__profile {
+      display: flex;
+      align-items: center;
+    }
+
+    &__profile-avatar {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+
+    &__profile-name {
+      font-size: 0.75rem;
+    }
+
+    &__profile-date {
+      font-size: 0.75rem;
+    }
+
+    &__title {
+      font-size: 1.125rem;
+    }
+
+    &__content {
+      font-size: 0.875rem;
+      line-height: 21px;
+    }
+
+    &__expand-content {
+      font-size: 0.875rem;
+      margin-top: 10px;
+      // gap: 0.875rem;
+    }
   }
 }
